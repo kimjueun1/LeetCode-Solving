@@ -8,12 +8,10 @@ public:
             num = count(arr.begin(), arr.end(), arr[i]);
             if (arr[i] == num)
             {
-                // cout << num;
                 return num;
             }
             num = -1;
         }
-        // cout << num;
         return num;
     }
 };
