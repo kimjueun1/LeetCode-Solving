@@ -1,7 +1,6 @@
 class Solution {
 public:
     string destCity(vector<vector<string>>& paths) {
-        // int n=paths.size();
         for(int i=0; i<paths.size(); i++){
             string dest=paths[i][1];
             bool is_dest=false;
