@@ -1,30 +1,29 @@
 class Solution {
 public:
     string decodeString(string s) {
-        int i = 0;
-        return solve(s, i);
+        int i=0;
+        return code(s, i);
     }
-    
-    string solve(string& s, int &i) {
-        
-        string ans;
-        while(i<s.size() && s[i] != ']') {
-            if(isdigit(s[i])) {
-                int k=0;
-                while(i<s.size() && isdigit(s[i])) {
-                    k = k*10 + s[i++]-'0';
+    string code(string &s, int &i){
+        string res;
+        while(i<s.size() && s[i] !=']'){
+            if(isdigit(s[i])){
+                int num=0;
+                while(i<s.size() && isdigit(s[i])){
+                    num = num*10 + s[i++]-'0';
                 }
                 i++;
-                string temp = solve(s, i);
-                while(k--) {
-                    ans += temp;
+                string str = code(s, i);
+                while(num--){
+                    res += str;
                 }
                 i++;
-            } else {
-                ans += s[i++];
+            }
+            else {
+                res += s[i++];
             }
         }
-        return ans;
+        return res;
     }
-    
+
 };
